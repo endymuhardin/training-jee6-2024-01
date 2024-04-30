@@ -45,3 +45,5 @@ artifactId: toko-ejb
 version: 1.0-SNAPSHOT
 package: com.muhardin.endy.training.jee6
    ```
+
+5. Perintah untuk build : `mvn clean package`
