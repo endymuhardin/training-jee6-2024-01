@@ -93,7 +93,6 @@ create table pembayaran (
     waktu_transaksi datetime not null,
     nilai decimal(19,2) not null,
     referensi varchar(36) not null,
-    jenis_pembayaran varchar(20) not null,
     bank varchar(100), 
     nomor_rekening varchar(50), 
     nomor_handphone varchar(50),
@@ -159,7 +158,6 @@ create table virtual_account (
     waktu_transaksi datetime not null,
     nilai decimal(19,2) not null,
     referensi varchar(36) not null,
-    jenis_pembayaran varchar(20) not null,
     bank varchar(100), 
     nomor_rekening varchar(50), 
     primary key (id),
@@ -172,7 +170,6 @@ create table gopay (
     waktu_transaksi datetime not null,
     nilai decimal(19,2) not null,
     referensi varchar(36) not null,
-    jenis_pembayaran varchar(20) not null,
     nomor_handphone varchar(50),
     primary key (id),
     foreign key (id_pembelian) references pembelian(id)
