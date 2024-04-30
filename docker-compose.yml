@@ -1,0 +1,12 @@
+services:
+  db-toko:
+    image: mysql:8
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+      MYSQL_USER: training
+      MYSQL_PASSWORD: javaee6
+      MYSQL_DATABASE: tokodb
+    volumes:
+      - ./db-toko:/var/lib/mysql
+    ports:
+      - 3306:3306
