@@ -57,8 +57,8 @@ create table pembayaran (
     * Kode program Java 
 
        ```java
-       List<PembayaranVA> daftarPembayaran = 
-        em.query("select p from PembayaranVA where p.bank = ? ", "BCA");
+       List<VirtualAccount> daftarPembayaran = 
+        em.query("select p from VirtualAccount where p.bank = ? ", "BCA");
        ```
     
     * SQL yang dihasilkan
@@ -119,8 +119,8 @@ create table gopay (
     * Kode program Java 
 
        ```java
-       List<PembayaranVA> daftarPembayaran = 
-        em.query("select p from PembayaranVA where p.bank = ? ", "BCA");
+       List<VirtualAccount> daftarPembayaran = 
+        em.query("select p from VirtualAccount where p.bank = ? ", "BCA");
        ```
     
     * SQL yang dihasilkan
@@ -142,7 +142,7 @@ create table gopay (
     * SQL yang dihasilkan
 
         ```sql
-        select * from pembayaran p where p.waktu_transaksi between x and y 
+        select * from pembayaran p where p.waktu_transaksi between '2024-01-01' and '2024-05-01' 
         inner join virtual_account va on p.id = va.id 
         inner join gopay gp on p.id = gp.id
         ```
@@ -181,8 +181,8 @@ create table gopay (
     * Kode program Java 
 
        ```java
-       List<PembayaranVA> daftarPembayaran = 
-        em.query("select p from PembayaranVA where p.bank = ? ", "BCA");
+       List<VirtualAccount> daftarPembayaran = 
+        em.query("select p from VirtualAccount where p.bank = ? ", "BCA");
        ```
     
     * SQL yang dihasilkan
