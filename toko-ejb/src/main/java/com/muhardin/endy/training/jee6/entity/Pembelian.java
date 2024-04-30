@@ -27,7 +27,7 @@ public class Pembelian {
     @OneToOne(mappedBy = "pembelian")
     private Pelanggan pembayaran;
 
-    @OneToMany(mappedBy = "pembelian", 
+    @OneToMany(mappedBy = "pembelian", // dimapping ke variabel pembelian di sisi seberang
     cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PembelianDetail> daftarPembelianDetail 
         = new ArrayList<PembelianDetail>();

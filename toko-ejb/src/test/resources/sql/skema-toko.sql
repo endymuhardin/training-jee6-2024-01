@@ -39,3 +39,16 @@ create table pembayaran (
     primary key (id),
     foreign key (id_pembelian) references pembelian(id)
 );
+
+create table pembayaran_virtual_account (
+    id varchar(36),
+    bank varchar(50) not null,
+    nomor_rekening varchar(100) not null,
+    primary key (id)
+);
+
+create table pembayaran_gopay (
+    id varchar(36),
+    nomor_handphone varchar(100) not null,
+    primary key (id)
+);

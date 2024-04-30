@@ -47,3 +47,8 @@ package: com.muhardin.endy.training.jee6
    ```
 
 5. Perintah untuk build : `mvn clean package`
+
+
+# Referensi #
+
+* [Berbagai strategi mapping inheritance](https://thorben-janssen.com/complete-guide-inheritance-strategies-jpa-hibernate/)
