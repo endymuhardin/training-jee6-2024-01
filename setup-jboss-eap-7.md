@@ -103,3 +103,45 @@ To represent the user add the following to the server-identities definition <sec
 7. Cek ke web management console, pastikan drivernya sudah terlihat
 
 [![Management Console JDBC MySQL](img/mysql-driver-jboss.png)](img/mysql-driver-jboss.png)
+
+## Menambah Datasource ##
+
+1. Klik add datasource
+
+[![Add Datasource](img/01-add-datasource.png)](img/01-add-datasource.png)
+
+2. Pilih template konfigurasi MySQL
+
+[![Template Config](img/02-template-mysql.png)](img/02-template-mysql.png)
+
+3. Isikan nama datasource. Ini harus sama dengan yang di file `persistence.xml`
+
+[![Nama DS](img/03-nama-ds.png)](img/03-nama-ds.png)
+
+4. Informasi driver database, sudah autodetect. Ikut saja defaultnya
+
+[![Konfigurasi koneksi](img/04-info-driver.png)](img/04-info-driver.png)
+
+5. Informasi koneksi database, sesuai konfigurasi database kita
+
+[![Info Koneksi](img/05-info-koneksi.png)](img/05-info-koneksi.png)
+
+6. Tes koneksi untuk memastikan konfigurasinya benar
+
+[![Test koneksi](img/06-tes-koneksi.png)](img/06-tes-koneksi.png)
+
+7. Koneksi sukses
+
+[![Koneksi sukses](img/07-koneksi-sukses.png)](img/07-koneksi-sukses.png)
+
+8. Review konfigurasi
+
+[![Review konfigurasi](img/08-review-konfig.png)](img/08-review-konfig.png)
+
+9. Sukses menambah datasource
+
+[![Sukses](img/09-add-sukses.png)](img/09-add-sukses.png)
+
+10. Reload server
+
+[![Reload Server](img/10-reload-server.png)](img/10-reload-server.png)
