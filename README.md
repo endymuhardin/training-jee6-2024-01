@@ -52,3 +52,4 @@ package: com.muhardin.endy.training.jee6
 # Referensi #
 
 * [Berbagai strategi mapping inheritance](https://thorben-janssen.com/complete-guide-inheritance-strategies-jpa-hibernate/)
+* [JBoss EAP 7 Developer Guide](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html/development_guide/index)
