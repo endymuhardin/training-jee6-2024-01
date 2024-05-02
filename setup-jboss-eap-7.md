@@ -145,3 +145,35 @@ To represent the user add the following to the server-identities definition <sec
 10. Reload server
 
 [![Reload Server](img/10-reload-server.png)](img/10-reload-server.png)
+
+## Deployment Aplikasi ##
+
+1. Build dulu aplikasinya
+
+    ```
+    mvn clean package
+    ```
+
+    Hasilnya adalah file `toko-ejb.jar` di folder `target`
+
+2. Masuk ke menu Deployments di JBoss
+
+3. Klik Upload Deployment
+
+[![Upload Deployment](img/01-upload-deployment.png)](img/01-upload-deployment.png)
+
+4. Masukkan file `toko-ejb.jar`
+
+[![Pilih file](img/02-pilih-file-jar.png)](img/02-pilih-file-jar.png)
+
+5. Tentukan nama deployment, ikuti default saja
+
+[![Isi nama deployment](img/03-nama-deployment.png)](img/03-nama-deployment.png)
+
+6. Upload sukses
+
+[![Sukses](img/04-deploy-sukses.png)](img/04-deploy-sukses.png)
+
+7. Cek apakah skema database sudah berhasil generate
+
+[![Cek hasil deployment](img/05-cek-hasil-deploy.png)](img/05-cek-hasil-deploy.png)
