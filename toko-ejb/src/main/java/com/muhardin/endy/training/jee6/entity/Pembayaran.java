@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Entity @Data
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Pembayaran {
+public abstract class Pembayaran {
     @Id
     private String id;
 
