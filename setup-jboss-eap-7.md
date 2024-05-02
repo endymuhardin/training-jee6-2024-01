@@ -84,7 +84,7 @@ To represent the user add the following to the server-identities definition <sec
 5. Connect ke jboss yang sedang berjalan
 
     ```
-    connect
+    [disconnected /] connect
     [standalone@localhost:9990 /]
     ```
 
