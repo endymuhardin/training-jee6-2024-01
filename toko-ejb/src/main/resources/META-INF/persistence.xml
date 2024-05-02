@@ -4,10 +4,10 @@
    version="2.0">
    <persistence-unit name="tokoPU" transaction-type="JTA">
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
-      <jta-data-source>java:jboss/datasources/TokoDS</jta-data-source>
+      <jta-data-source>java:/TokoDS</jta-data-source>
       <properties>
-         <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-         <property name="hibernate.hbm2ddl.auto" value="validate"/>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+         <property name="hibernate.hbm2ddl.auto" value="update"/>
          <property name="hibernate.show_sql" value="true"/>
       </properties>
    </persistence-unit>

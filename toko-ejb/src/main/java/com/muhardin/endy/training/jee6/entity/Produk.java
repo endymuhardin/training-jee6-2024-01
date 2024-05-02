@@ -4,10 +4,12 @@ import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity @Data
+@Table(name = "produk")
 public class Produk {
     @Id
     private String id;
