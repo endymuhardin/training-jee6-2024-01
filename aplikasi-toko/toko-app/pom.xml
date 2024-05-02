@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.muhardin.endy.training.jee6</groupId>
+  <artifactId>toko-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>ear</packaging>
+
+  <parent>
+    <groupId>com.muhardin.endy.training.jee6</groupId>
+    <artifactId>toko-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <name>toko-app</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+   
+  </dependencies>
+
+  <build>
+    <finalName>toko-app</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <ejbModule>
+            <groupId>com.muhardin.endy.training.jee6</groupId>
+            <artifactId>toko-ejb</artifactId>
+            <bundleFilename>toko-ejb.jar</bundleFilename>
+          </ejbModule>
+          <webModule>
+            <groupId>com.muhardin.endy.training.jee6</groupId>
+            <artifactId>toko-rest</artifactId>
+            <contextRoot>/toko</contextRoot>
+          </webModule>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

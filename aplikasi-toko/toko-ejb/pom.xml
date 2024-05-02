@@ -7,6 +7,12 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>ejb</packaging>
 
+    <parent>
+        <groupId>com.muhardin.endy.training.jee6</groupId>
+        <artifactId>toko-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <name>toko-ejb</name>
 
     <properties>
