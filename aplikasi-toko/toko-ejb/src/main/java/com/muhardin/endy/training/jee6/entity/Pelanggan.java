@@ -19,6 +19,6 @@ public class Pelanggan {
     private String email;
     
     // optional, tidak mempengaruhi skema database
-    @OneToMany(mappedBy = "pelanggan")
-    private List<Pembelian> daftarPembelian;
+    //@OneToMany(mappedBy = "pelanggan")
+    //private List<Pembelian> daftarPembelian;
 }
