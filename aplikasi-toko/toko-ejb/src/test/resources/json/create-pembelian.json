@@ -1,0 +1,14 @@
+{
+    "waktuTransaksi" : "2024-01-01 08:12:34",
+    "pelanggan" : {"id" : "p001"},
+    "daftarPembelianDetail" : [
+        {
+            "produk" : {"id" : "p001"},
+            "jumlah" : 1
+        },
+        {
+            "produk" : {"id" : "p003"},
+            "jumlah" : 3
+        }
+    ]
+}
