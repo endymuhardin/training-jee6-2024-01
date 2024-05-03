@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -16,6 +17,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -33,16 +35,18 @@ public class Pembelian {
     private LocalDateTime waktuTransaksi = LocalDateTime.now();
 
     @NotNull
-    @ManyToOne
+    @ManyToOne  // defaultnya eager fetch : langsung dijoin. Hanya satu layer
     @JoinColumn(name = "id_pelanggan")
     private Pelanggan pelanggan;
 
-    @OneToOne(mappedBy = "pembelian")
+    @OneToOne(mappedBy = "pembelian") // defaultnya eager fetch : langsung dijoin
     private Pembayaran pembayaran;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "pembelian", // dimapping ke variabel pembelian di sisi seberang
-    cascade = CascadeType.ALL, orphanRemoval = true)
+    fetch = FetchType.EAGER, // langsung load tiap kali query pembelian, defaultnya lazy loading
+    cascade = CascadeType.ALL, 
+    orphanRemoval = true)
     private List<PembelianDetail> daftarPembelianDetail 
         = new ArrayList<PembelianDetail>();
 }

@@ -31,11 +31,19 @@ public class PembelianDao {
 
     @SuppressWarnings("unchecked")
     public List<Pembelian> cariByEmailPelanggan(String email, Integer start, Integer rows){
-        return entityManager.createQuery("select p from Pembelian p left join fetch p.pembayaran where p.pelanggan.email = :email order by p.waktuTransaksi")
+        List<Pembelian> hasil = entityManager.createQuery("select p from Pembelian p left join fetch p.pembayaran where p.pelanggan.email = :email order by p.waktuTransaksi")
         .setParameter("email", email)
         .setFirstResult(start)
         .setMaxResults(rows)
         .getResultList();
+
+        // inisialisasi proxy
+        /*
+        for (Pembelian pembelian : hasil) {
+            pembelian.getDaftarPembelianDetail().size();
+        }
+        */
+        return hasil;
     }
 
     @SuppressWarnings("unchecked")
@@ -44,6 +52,14 @@ public class PembelianDao {
         .setFirstResult(start)
         .setMaxResults(rows)
         .getResultList();
+    }
+
+    public void hapus(String id) {
+        Pembelian p = entityManager.find(Pembelian.class, id);
+        if(p != null) {
+            System.out.println("Menghapus pembelian dengan id "+p.getId());
+            entityManager.remove(p);
+        }
     }
 
 }
