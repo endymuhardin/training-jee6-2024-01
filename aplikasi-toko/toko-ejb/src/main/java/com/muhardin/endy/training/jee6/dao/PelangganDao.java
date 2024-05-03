@@ -14,16 +14,17 @@ public class PelangganDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void save(Pelanggan p){
+    public Pelanggan save(Pelanggan p){
         if(p.getId() == null) {
             entityManager.persist(p);
         } else {
             entityManager.merge(p);
         }
+        return p;
     }
 
     public void delete(Pelanggan p){
-        entityManager.remove(p);
+        entityManager.remove(entityManager.contains(p) ? p : entityManager.merge(p));
     }
 
     public Pelanggan findById(String id){
