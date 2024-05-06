@@ -1,5 +1,7 @@
 package com.muhardin.endy.training.jee6.entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -34,4 +36,8 @@ public class PembelianDetail {
 
     @NotNull @Min(1)
     private Integer jumlah;
+
+    public BigDecimal getSubtotal(){
+        return produk.getHarga().multiply(new BigDecimal(jumlah));
+    }
 }

@@ -1,5 +1,6 @@
 package com.muhardin.endy.training.jee6.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +18,16 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 import lombok.Data;
 
@@ -31,6 +38,9 @@ public class Pembelian {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @Column(name = "waktu_transaksi")
     private LocalDateTime waktuTransaksi = LocalDateTime.now();
 
@@ -39,6 +49,7 @@ public class Pembelian {
     @JoinColumn(name = "id_pelanggan")
     private Pelanggan pelanggan;
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "pembelian") // defaultnya eager fetch : langsung dijoin
     private Pembayaran pembayaran;
 
@@ -49,4 +60,12 @@ public class Pembelian {
     orphanRemoval = true)
     private List<PembelianDetail> daftarPembelianDetail 
         = new ArrayList<PembelianDetail>();
+
+    public BigDecimal getTotal(){
+        BigDecimal total = BigDecimal.ZERO;
+        for(PembelianDetail pd : getDaftarPembelianDetail()){
+            total = total.add(pd.getSubtotal());
+        }
+        return total;
+    }
 }

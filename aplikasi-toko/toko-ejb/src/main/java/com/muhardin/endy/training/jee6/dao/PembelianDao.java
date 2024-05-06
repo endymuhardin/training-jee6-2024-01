@@ -11,6 +11,7 @@ import com.muhardin.endy.training.jee6.entity.PembelianDetail;
 
 @Stateless
 public class PembelianDao {
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -60,6 +61,10 @@ public class PembelianDao {
             System.out.println("Menghapus pembelian dengan id "+p.getId());
             entityManager.remove(p);
         }
+    }
+
+    public Pembelian cariById(String id) {
+        return entityManager.find(Pembelian.class, id);
     }
 
 }
