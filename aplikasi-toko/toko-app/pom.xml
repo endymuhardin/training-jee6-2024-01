@@ -32,6 +32,12 @@
     <version>1.0-SNAPSHOT</version>
     <type>war</type>
    </dependency>
+   <dependency>
+    <groupId>com.muhardin.endy.training.jee6</groupId>
+    <artifactId>toko-soap</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <type>war</type>
+   </dependency>
   </dependencies>
 
   <build>
@@ -59,7 +65,12 @@
           <webModule>
             <groupId>com.muhardin.endy.training.jee6</groupId>
             <artifactId>toko-rest</artifactId>
-            <contextRoot>/toko</contextRoot>
+            <contextRoot>/toko-rest</contextRoot>
+          </webModule>
+          <webModule>
+            <groupId>com.muhardin.endy.training.jee6</groupId>
+            <artifactId>toko-soap</artifactId>
+            <contextRoot>/toko-soap</contextRoot>
           </webModule>
         </configuration>
       </plugin>
