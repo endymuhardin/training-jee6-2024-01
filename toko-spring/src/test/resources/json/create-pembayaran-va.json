@@ -1,0 +1,8 @@
+{
+    "pembelian" : { "id" : "7a1843f4-21e1-4ec3-bac5-ca7777cba659"},
+    "waktuTransaksi" : "2024-05-06 08:12:34",
+    "nilai" : "400010",
+    "nomorReferensi" : "abcd1234",
+    "bank" : "BCA",
+    "nomorRekening" : "1234567890"
+}
