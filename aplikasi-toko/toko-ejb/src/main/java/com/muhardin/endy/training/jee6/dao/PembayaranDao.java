@@ -1,5 +1,6 @@
 package com.muhardin.endy.training.jee6.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -35,5 +36,14 @@ public class PembayaranDao {
         .getResultList();
     }
 
+    @SuppressWarnings("unchecked")
+    public List<Pembayaran> daftarPembayaranByWaktuPembayaran(LocalDateTime from, LocalDateTime to, Integer start, Integer rows){
+        return entityManager.createQuery("select p from Pembayaran p where p.waktuTransaksi between :from and :to")
+        .setParameter("from", from)
+        .setParameter("to", to)
+        .setFirstResult(start)
+        .setMaxResults(rows)
+        .getResultList();
+    }
 
 }
